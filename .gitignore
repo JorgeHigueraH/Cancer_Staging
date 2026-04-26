@@ -1,3 +1,5 @@
+# .gitignore
 .venv/
 __pycache__/
-*.ipynb_checkpoints/s
+*.pyc
+.ipynb_checkpoints/
