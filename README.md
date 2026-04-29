@@ -56,8 +56,8 @@ Para romper el techo de rendimiento y solucionar el cuello de botella en la clas
 
 ---
 
-## 📚 References / Referencias Científicas
+##  References / Referencias Científicas
 
-1. Li, Y., et al. (2022). *Clinical-Longformer and Clinical-BigBird: Transformers for long clinical sequences.* [arXiv:2201.11838]
-2. Luo, R., et al. (2022). *BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining.* Briefings in Bioinformatics.
-3. Lin, T. Y., et al. (2017). *Focal Loss for Dense Object Detection.* IEEE International Conference on Computer Vision (ICCV).
+1. Li, Y., et al. (2022). *Clinical-Longformer and Clinical-BigBird: Transformers for long clinical sequences*. [arXiv:2201.11838](https://arxiv.org/abs/2201.11838).
+2. Luo, R., et al. (2022). *BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining*. Briefings in Bioinformatics.
+3. Lin, T. Y., et al. (2017). *Focal Loss for Dense Object Detection*. IEEE International Conference on Computer Vision (ICCV).
