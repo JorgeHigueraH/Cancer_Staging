@@ -30,10 +30,31 @@ class TumorRowlandCNN(nn.Module):
 class TumorRowlandRNN(nn.Module):
     def __init__(self, vocab_size, embed_dim, hidden_dim, num_classes, matrix=None, trainable=True):
         super(TumorRowlandRNN, self).__init__()
-        pass 
+        self.embedding = nn.Embedding(vocab_size, embed_dim, padding_idx=0)
+        if matrix is not None and np.any(matrix):
+            self.embedding.weight.data.copy_(torch.from_numpy(matrix))
+        self.embedding.weight.requires_grad = trainable
+
+        self.rnn = nn.RNN(
+            input_size=embed_dim, 
+            hidden_size=hidden_dim, 
+            num_layers=2, 
+            batch_first=True, 
+            bidirectional=True,
+            dropout=0.3
+        )
+        
+        self.dropout = nn.Dropout(0.5)
+        self.fc = nn.Linear(hidden_dim * 2, num_classes)
 
     def forward(self, x):
-        pass
+        embedded = self.embedding(x)
+        output, hidden = self.rnn(embedded)
+        
+        hidden_concat = torch.cat((hidden[-2, :, :], hidden[-1, :, :]), dim=1)
+        
+        out = self.dropout(hidden_concat)
+        return self.fc(out)
 
 class TumorRowlandLSTM(nn.Module):
     def __init__(self, vocab_size, embed_dim, hidden_dim, num_classes, matrix=None, trainable=True):

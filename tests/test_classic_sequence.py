@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import torch
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import torch.nn as nn
 from torch.utils.data import TensorDataset, DataLoader
 from gensim.models import KeyedVectors
